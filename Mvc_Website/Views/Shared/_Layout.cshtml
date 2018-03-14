@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.27/css/uikit.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.27/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.27/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="css/uikit.min.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - FOODFIND</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script>
+        $(document).ready(function () {
+            var pathname = window.location.pathname;
+
+            if (pathname !== "/") {
+                $("#navbar").css("background", "#292c2f");
+            }
+        });
+    </script>
+
+</head>
+<body>
+    <header>
+        <div data-uk-sticky>
+            <nav id="navbar" class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a id="navbar-brand" class="navbar-brand center">FOODFIND</a>
+                    </div>
+                    <div class="navbar-collapse collapse" id="navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>@Html.ActionLink("EVENTY", "Index", "Home")</li>
+                            <li>@Html.ActionLink("APLIKACJA", "Aplikacja", "Home")</li>
+                            <li>@Html.ActionLink("REJESTRACJA", "Rejestracja", "Home")</li>
+                            <li>@Html.ActionLink("KONTAKT", "Kontakt", "Home")</li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    @*<button class="btn btn-primary"><span class="glyphicon glyphicon-home"></span>submit</button>*@
+
+    <div class="body-content">
+        @RenderBody()
+    </div>
+
+    <div class="container-fluid">
+        <footer class="footer-distributed">
+            <hr class="line1" />
+            <div class="footer-left">
+                <h3 id="footer-logo"></h3>
+                <p class="footer-links">
+                    <span>Treści</span>
+                    <ul>
+                        <li><a href="/Home">EVENTY</a></li>
+                        <li><a href="/Home/Aplikacja">APLIKACJA</a></li>
+                        <li><a href="/Home/Rejestracja">REJESTRACJA</a></li>
+                        <li><a href="/Home/Kontakt">KONTAKT</a></li>
+                    </ul>
+                </p>
+            </div>
+            <div class="footer-center">
+                <p><span>Kontakt</span></p>
+                <div>
+                    <i class="fa fa-map-marker"></i>
+                    <p>Wrocław, Polska</p>
+                </div>
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <p>510 981 711</p>
+                </div>
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <p><a href="mailto:management@foodfind.pl">management@foodfind.pl</a></p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <p class="footer-company-about"><span>Obserwuj nas</span></p>
+                <div class="footer-icons">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-snapchat"></i></a>
+                    <a href="#"><i class="fa fa-youtube"></i></a>
+                </div>
+            </div>
+            <hr />
+            <p class="footer-company-name">FOODFIND &copy; 2017</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
+
+@*<div class="navbar navbar-inverse navbar-fixed-top">*@

@@ -1,0 +1,21 @@
+﻿@model Mvc_Website.Models.Applications
+@{
+    ViewBag.Title = "APLIKACJA FOODFIND";
+}
+<h4>@ViewBag.Title</h4>
+<h5>@ViewBag.Message</h5>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <section>
+        <div id="content-two">
+
+        </div>
+    </section>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
